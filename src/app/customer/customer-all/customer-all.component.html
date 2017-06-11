@@ -1,0 +1,42 @@
+<div class="content-wrapper" style="height: 3500px;">
+  <section class="content">
+    <div class="col-xs-12">
+      <div class="box">
+        <div class="box-header with-border">
+          <h3 class="box-title">Customer All</h3>
+          <div class="box-tools pull-right">
+            <span class="label label-primary">Label</span>
+          </div>
+        </div>
+        <div class="box-body">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Mobile</th>
+                  <th>Location</th>
+                  <th>Rep</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let c of customers" >
+                  <td>{{c.name}}</td>
+                  <td>{{c.phone1}}</td>
+                  <td>{{c.location}}</td>
+                  <td>{{c.repData?.name}}</td>
+                  <td> <button type="button" class="btn btn-success btn-xs" (click)="toggleStatus(customer)"> Active</button></td>
+                  <td><a type="button" class="btn btn-primary btn-xs">
+                  Edit</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

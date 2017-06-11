@@ -1,0 +1,65 @@
+<div class="content-wrapper" style="height: 3500px;">
+  <section class="content">
+    <div class="col-xs-12">
+      <div class="box">
+        <div class="box-header with-border">
+          <h3 class="box-title">Create Customer</h3>
+          <div class="box-tools pull-right">
+            <span class="label label-primary">Label</span>
+          </div>
+        </div>
+        <div class="box-body">
+          <form class="form-horizontal" [formGroup]="customerCreateForm" (submit)="submitCustomerCreateForm()">
+            <div class="form-group">
+              <label for="name " class="col-sm-2 control-label ">Name</label>
+              <div class="col-sm-10 ">
+                <input formControlName="name" type="text " class="form-control " id="name " placeholder="Name " required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="name " class="col-sm-2 control-label ">Rep</label>
+              <div class="col-sm-10 ">
+                <div>
+                  <select formControlName="rep_id" required class="form-control" (change)="getRep($event)">
+                    <option *ngFor="let rep of repList" value="{{ rep._id }}">
+                      <strong> {{ rep.name }} </strong>
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="phone " class="col-sm-2 control-label ">Phone</label>
+              <div class="col-sm-10 ">
+                <input formControlName="phone1" type="text " class="form-control " id="phone1 " placeholder="Phone " required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="otherphone " class="col-sm-2 control-label ">Other Phone</label>
+              <div class="col-sm-10 ">
+                <input formControlName="phone2" type="text " class="form-control " id="phone2 " placeholder="Other Phone " required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="location " class="col-sm-2 control-label ">Location</label>
+              <div class="col-sm-10 ">
+                <input formControlName="location" type="text " class="form-control " id="location " placeholder="Location " required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="postal " class="col-sm-2 control-label ">Postal Code</label>
+              <div class="col-sm-10 ">
+                <input formControlName="postal" type="text " class="form-control " id="postal " placeholder="Postal " required>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-10 col-sm-offset-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,1 @@
+export * from './rep-all.component';
